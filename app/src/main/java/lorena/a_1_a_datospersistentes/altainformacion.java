@@ -12,7 +12,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -26,6 +29,7 @@ public class altainformacion extends Activity {
     private Persoas persoa_seleccionada=null;
     EditText editnome;
     EditText editdescricion;
+    TextView textopersoas;
 
 
     public void onStart(){
@@ -48,6 +52,7 @@ public class altainformacion extends Activity {
         setContentView(R.layout.activity_altainformacion);
         editnome = (EditText) findViewById(R.id.textonome);
         editdescricion = (EditText) findViewById(R.id.textodescricion);
+
         Button botonalta=(Button)findViewById(R.id.botonalta);
         botonalta.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,8 +60,15 @@ public class altainformacion extends Activity {
 
                 Persoas persoa = new Persoas(editnome.getText().toString(), editdescricion.getText().toString());
                 basedatos.engadirpersoa(persoa);
-                editnome.setText("");
-                editdescricion.setText("");
+                Toast.makeText(getApplicationContext(),editnome.getText().toString()+" Añadiuse a base de datos",Toast.LENGTH_LONG).show();
+                String datos="";
+                editnome.setText(datos);
+                editdescricion.setText(datos);
+
+
+
+
+
                  }
         });
 

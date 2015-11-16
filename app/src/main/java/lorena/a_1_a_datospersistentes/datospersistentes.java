@@ -19,7 +19,7 @@ public class datospersistentes extends AppCompatActivity {
         setContentView(R.layout.activity_datospersistentes);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        basedatos.engadirpersoa(new Persoas("Lorena","Estudiante I.E.S San Clemente"));
+        
 
         Button boton1=(Button)findViewById(R.id.botonprimeractividad);
 
@@ -44,7 +44,7 @@ public class datospersistentes extends AppCompatActivity {
         startActivity(intent);
     }
     public void onClick2(View v){
-        Intent intent=new Intent(this,lista.class);
+        Intent intent=new Intent(this,Lista.class);
         startActivity(intent);
     }
     @Override

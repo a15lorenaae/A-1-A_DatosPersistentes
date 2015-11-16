@@ -15,16 +15,16 @@ import java.util.ArrayList;
 public class basedatos extends SQLiteOpenHelper {
     public final static String nome_bd = "persoas";
     public final static int version_bd = 1;
-    private final  String consultar_persoas = "SELECT  * from persoas order by nome";
-    private final  String taboas_persoas = "persoas";
-    public  SQLiteDatabase sqlLiteDB;
-private String creartaboapersoas="CREATE TABLE Persoas("+"nome VARCHAR(30) PRIMARY KEY,"+"descricion VARCHAR (70)"+")";
-    public basedatos(Context context) {
+    public final static String consultar_persoas = "SELECT  * from Persoas order by nome";
+    private final  String taboas_persoas = "Persoas";
+    public static SQLiteDatabase sqlLiteDB;
+private static String creartaboapersoas="CREATE TABLE Persoas("+"nome VARCHAR(30) PRIMARY KEY,"+"descricion VARCHAR (70)"+")";
+    public  basedatos(Context context) {
         super(context, nome_bd, null, version_bd);
     }
 
 
-    public long engadirpersoa(Persoas persoa) {
+    public static long engadirpersoa(Persoas persoa) {
         ContentValues valores = new ContentValues();
         valores.put("nome", persoa.getNome());
         valores.put("descricion",persoa.getDescricion());
@@ -35,7 +35,7 @@ private String creartaboapersoas="CREATE TABLE Persoas("+"nome VARCHAR(30) PRIMA
 
 
 
-    public ArrayList<Persoas> obterpersoas() {
+    public static ArrayList<Persoas> obterpersoas() {
         ArrayList<Persoas> persoas_devolver = new ArrayList<Persoas>();
         Cursor datosconsulta = sqlLiteDB.rawQuery(consultar_persoas, null);
         if (datosconsulta.moveToFirst()) {
@@ -55,7 +55,7 @@ private String creartaboapersoas="CREATE TABLE Persoas("+"nome VARCHAR(30) PRIMA
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldversion, int newversion) {
-        db.execSQL("DROP TABLE ID EXIST Persoas");
+        db.execSQL("DROP TABLE IF EXISTS Persoas");
         onCreate(db);
     }
 

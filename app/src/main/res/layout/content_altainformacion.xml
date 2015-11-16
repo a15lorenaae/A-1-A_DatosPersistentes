@@ -25,5 +25,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/botonalta"
         android:layout_below="@id/textodescricion"
-        android:Text="Alta persoa"/>
+        android:text="Alta persoa"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/botonalta"
+        android:id="@+id/textopersoas"/>
 </RelativeLayout>
