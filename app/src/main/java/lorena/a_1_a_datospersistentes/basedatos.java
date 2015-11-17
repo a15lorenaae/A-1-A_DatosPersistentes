@@ -13,12 +13,12 @@ import java.util.ArrayList;
  * Created by Lorena on 14/11/2015.
  */
 public class basedatos extends SQLiteOpenHelper {
-    public final static String nome_bd = "persoas";
+    public final static String nome_bd = "datos";
     public final static int version_bd = 1;
-    public final static String consultar_persoas = "SELECT  * from Persoas order by nome";
-    private final  String taboas_persoas = "Persoas";
+    public final static String consultar_datos = "Select nome,descricion from datos order by nome";
+    private final  String taboas_persoas = "Datos";
     public static SQLiteDatabase sqlLiteDB;
-private static String creartaboapersoas="CREATE TABLE Persoas("+"nome VARCHAR(30) PRIMARY KEY,"+"descricion VARCHAR (70)"+")";
+private static String creartaboadatos="CREATE TABLE datos("+"nome VARCHAR(30) PRIMARY KEY,"+"descricion VARCHAR (70)"+")";
     public  basedatos(Context context) {
         super(context, nome_bd, null, version_bd);
     }
@@ -28,7 +28,7 @@ private static String creartaboapersoas="CREATE TABLE Persoas("+"nome VARCHAR(30
         ContentValues valores = new ContentValues();
         valores.put("nome", persoa.getNome());
         valores.put("descricion",persoa.getDescricion());
-        long id = sqlLiteDB.insert("Persoas", null, valores);
+        long id = sqlLiteDB.insert("Datos", null, valores);
         return id;
 
     }
@@ -37,7 +37,7 @@ private static String creartaboapersoas="CREATE TABLE Persoas("+"nome VARCHAR(30
 
     public static ArrayList<Persoas> obterpersoas() {
         ArrayList<Persoas> persoas_devolver = new ArrayList<Persoas>();
-        Cursor datosconsulta = sqlLiteDB.rawQuery(consultar_persoas, null);
+        Cursor datosconsulta = sqlLiteDB.rawQuery(consultar_datos, null);
         if (datosconsulta.moveToFirst()) {
             Persoas persoa;
             while (!datosconsulta.isAfterLast()) {
@@ -50,12 +50,13 @@ private static String creartaboapersoas="CREATE TABLE Persoas("+"nome VARCHAR(30
         return persoas_devolver;
     }
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(creartaboapersoas);
+
+        db.execSQL(creartaboadatos);
 
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldversion, int newversion) {
-        db.execSQL("DROP TABLE IF EXISTS Persoas");
+        db.execSQL("DROP TABLE IF EXISTS datos");
         onCreate(db);
     }
 

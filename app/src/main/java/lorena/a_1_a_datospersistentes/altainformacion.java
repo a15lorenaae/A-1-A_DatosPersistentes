@@ -26,10 +26,11 @@ import java.util.ArrayList;
 
 public class altainformacion extends Activity {
     private basedatos datos;
-    private Persoas persoa_seleccionada=null;
+    private Lista lista;
+
     EditText editnome;
     EditText editdescricion;
-    TextView textopersoas;
+
 
 
     public void onStart(){
@@ -48,6 +49,7 @@ public class altainformacion extends Activity {
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_altainformacion);
         editnome = (EditText) findViewById(R.id.textonome);

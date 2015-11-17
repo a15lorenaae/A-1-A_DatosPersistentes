@@ -5,21 +5,28 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="#3333CC"
     tools:context="lorena.a_1_a_datospersistentes.Lista">
 <ListView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:id="@+id/lista"/>
+    android:id="@+id/lista" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/botongardar"
         android:text="Gardar"
-        android:layout_below="@+id/lista"
-        android:onClick="onClick"/>
+        android:layout_below="@+id/lista"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textoseleccionado"
-        android:layout_below="@id/botongardar"/>
+        android:layout_below="@id/botongardar"
+        android:textColor="#FF00"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cambiar directorio"
+        android:id="@+id/botoncambiar"
+        android:layout_below="@id/textoseleccionado"/>
 </RelativeLayout>

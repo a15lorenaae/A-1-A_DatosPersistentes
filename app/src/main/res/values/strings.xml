@@ -3,4 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_altainformacion">altainformacion</string>
     <string name="title_activity_lista">Lista</string>
+    <string name="title_activity_settings">Settings</string>
+
+
 </resources>
