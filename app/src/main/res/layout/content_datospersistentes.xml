@@ -21,4 +21,16 @@
         android:id="@+id/botonsegundaactividad"
         android:text="Lanzar 2ºActividad"
         android:onClick="onClick2"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cambiar directorio"
+        android:id="@+id/botoncambiar"
+        android:layout_below="@id/botonsegundaactividad"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Copiar bd"
+        android:id="@+id/botoncopiar"
+        android:layout_below="@id/botoncambiar"/>
 </RelativeLayout>

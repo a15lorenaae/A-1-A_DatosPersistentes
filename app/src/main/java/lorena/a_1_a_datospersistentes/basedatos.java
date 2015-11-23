@@ -14,6 +14,7 @@ import java.util.ArrayList;
  */
 public class basedatos extends SQLiteOpenHelper {
     public final static String nome_bd = "datos";
+    public final static String nome_bdcopiada="datoscopiados";
     public final static int version_bd = 1;
     public final static String consultar_datos = "Select nome,descricion from datos order by nome";
     private final  String taboas_persoas = "Datos";

@@ -91,15 +91,6 @@ package lorena.a_1_a_datospersistentes;
 
                 }
             });
-            Button botoncambiar=(Button)findViewById(R.id.botoncambiar);
-            botoncambiar.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent i;
-                    i = new Intent(Lista.this, pantallapreferencias.class);
-                    startActivity(i);
-                }
-            });
 
 
         }
